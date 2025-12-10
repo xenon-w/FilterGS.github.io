@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Globe Outline Favicon</title>
+  <circle cx="32" cy="32" r="28" fill="none" stroke="#ffffff" stroke-width="4"/>
+  <path d="M4 32h56" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M32 4c8 8 12 18 12 28s-4 20-12 28c-8-8-12-18-12-28S24 12 32 4z"
+        fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M10 22c6 1.5 14 2.5 22 2.5s16-1 22-2.5" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M10 42c6-1.5 14-2.5 22-2.5s16 1 22 2.5" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+</svg>
