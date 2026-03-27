@@ -122,15 +122,15 @@
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
-              <!-- <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2603.23891v1"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
                   <span>Paper</span>
                 </a>
-              </span> -->
+              </span>
               <!-- <span class="link-block">
                 <a href="https://arxiv.org/abs/2011.12948"
                    class="external-link button is-normal is-rounded is-dark">
@@ -152,12 +152,12 @@
               </span> -->
               <!-- 代码链接 -->
               <span class="link-block">
-                <a href="https://github.com/xenon-w/FilterGS/tree/main"
+                <a href="https://github.com/xenon-w/FilterGS"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code (coming soon)</span>
+                  <span>Code</span>
                 </a>
               </span>
               <!-- Dataset Link. -->
@@ -261,12 +261,14 @@
           <p>
             To address these limitations, we propose <span class="dnerf">FilterGS</span>, 
             featuring a parallel filtering mechanism with two complementary filters 
-            that enable efficient selection without tree traversal, 
-            coupled with a scene-adaptive Gaussian shrinkage strategy 
-            that minimizes redundancy through opacity-based scaling. 
-            Extensive experiments demonstrate that FilterGS achieves state-of-the-art 
-            rendering speeds while maintaining competitive visual quality 
-            across multiple large-scale datasets.
+            that enable efficient selection without tree traversal. 
+            Additionally, we propose a novel GTC metric that quantifies 
+            the redundancy of Gaussian-tile key-value pairs. Based on this metric, 
+            we introduce a scene-adaptive Gaussian shrinking strategy that 
+            effectively reduces redundant pairs. Extensive experiments 
+            demonstrate that FilterGS achieves state-of-the-art rendering 
+            speeds while maintaining competitive visual quality across multiple 
+            large-scale datasets.
           </p>
         </div>
       </div>
@@ -283,9 +285,9 @@
           </figure>
           <p>
             The framework of FilterGS. (a) Given a set of images and SfM points for a large-scale scene, we first train
-            a LoD tree model. (b) To quantify redundancy of scene-wide Gaussian-tile pairs, we perform a pre-rendering
+            a LoD-GS tree model. (b) To quantify redundancy of scene-wide Gaussian-tile pairs, we perform a pre-rendering
             pass over all training views. While following the standard 3DGS pipeline, this stage computes the GTC metric G¯ and
-            derives a scaling factor τ = f(G¯). (c) In the formal rendering stage, the pre-computed scaling factor τ and
+            derives a shrinking threshold τ = f(G¯). (c) In the formal rendering stage, the pre-computed scaling factor τ and
             the LoD tree models are processed by two specialized filters to efficiently select Gaussians for rendering. These Gaussians
             are adaptively scaled by τ during AABB formation, significantly reducing redundant key-value pairs before final sorting
             and α-blending. 
